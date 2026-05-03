@@ -28,7 +28,7 @@
     }
 
     .section {
-      margin-top: 60px;
+       transition: opacity 0.2s ease;
     }
 
     .hidden {
@@ -66,8 +66,6 @@
         <a href="#" onclick="showSection('projects')">> projects</a><br>
         <a href="#" onclick="showSection('bio')">> bio</a><br>
         <a href="#" onclick="showSection('socials')">> socials</a><br>
-        <!-- CLOSES THE ABOVE -->
-        <a href="#" onclick="showSection('home')">> home</a>
       </p>
     </div>
 
@@ -101,9 +99,9 @@
     <div id="socials" class="section hidden">
       <p>> socials</p>
       <p>
-        > github: https://github.com/archrono1<br>
-        > youtube: https://youtube.com/@archrono<br>
-        > email: archrono.business@email.com
+       > <a href="https://github.com/archrono1" target="_blank">github</a>a><br>
+       > <a href="https://youtube.com/@archrono" target="_blank">youtube</a>a><br>
+       > <a href="mailto:archrono.business@email.com">email</a>
       </p>
     </div>
 
@@ -135,16 +133,23 @@
     setInterval(updateClocks, 1000);
     updateClocks();
 
-    function showSection(id) {
-      const sections = ["videos", "projects", "bio"];
-      sections.forEach(sec => {
-        document.getElementById(sec).classList.add("hidden");
-      });
+function showSection(id) {
+  const sections = ["videos", "projects", "bio", "socials"];
 
-      if (id !== "home") {
-        document.getElementById(id).classList.remove("hidden");
-      }
-    }
+  const target = document.getElementById(id);
+  const isHidden = target.classList.contains("hidden");
+
+  // close everything first
+  sections.forEach(sec => {
+    document.getElementById(sec).classList.add("hidden");
+  });
+
+  // if it WAS hidden, open it
+  // if it was open, it stays closed (toggle behavior)
+  if (isHidden) {
+    target.classList.remove("hidden");
+  }
+}
   </script>
 </body>
 </html>
