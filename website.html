@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>archrono</title>
+
+  <style>
+    body {
+      background: #000;
+      color: #00ff88;
+      font-family: "Courier New", monospace;
+      margin: 0;
+    }
+
+    .terminal {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    a {
+      color: #00ffaa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-shadow: 0 0 6px #00ff88;
+    }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .cursor::after {
+      content: "_";
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+
+    .clock-block {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="terminal">
+    <p>> archrono system initialized</p>
+    <p>> tracking temporal existence...</p>
+
+    <div class="clock-block" id="clocks"></div>
+
+    <div class="section">
+      <p>> navigation</p>
+      <p>
+        <a href="#" onclick="showSection('videos')">> videos</a><br>
+        <a href="#" onclick="showSection('projects')">> projects</a><br>
+        <a href="#" onclick="showSection('bio')">> bio</a><br>
+        <a href="#" onclick="showSection('home')">> home</a>
+      </p>
+    </div>
+
+    <!-- VIDEOS -->
+    <div id="videos" class="section hidden">
+      <p>> videos</p>
+
+      <iframe width="100%" height="400"
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- PROJECTS -->
+    <div id="projects" class="section hidden">
+      <p>> projects</p>
+
+      <p>> project_01: terminal portfolio</p>
+      <p>> project_02: (add something real here)</p>
+      <p>> project_03: (please don’t leave placeholders forever)</p>
+    </div>
+
+    <!-- BIO -->
+    <div id="bio" class="section hidden">
+      <p>> bio</p>
+
+      <p>
+        > high school student<br>
+        > electrical engineering focus<br>
+        > building systems, explaining complexity<br>
+        > archrono: time + engineering visualization
+      </p>
+
+      <p>> socials</p>
+      <p>
+        > github: https://github.com/yourname<br>
+        > youtube: https://youtube.com/@archrono<br>
+        > email: your@email.com
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    const birth = new Date("2008-01-01T00:00:00"); // FIX THIS
+
+    function updateClocks() {
+      const now = new Date();
+      const diff = now - birth;
+
+      const seconds = Math.floor(diff / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const hours = Math.floor(minutes / 60);
+      const days = Math.floor(hours / 24);
+      const years = (days / 365.25).toFixed(6);
+
+      document.getElementById("clocks").innerHTML = `
+        > AGE:<br>
+        > ${years} years<br>
+        > ${days} days<br>
+        > ${hours} hours<br>
+        > ${minutes} minutes<br>
+        > ${seconds} seconds
+      `;
+    }
+
+    setInterval(updateClocks, 1000);
+    updateClocks();
+
+    function showSection(id) {
+      const sections = ["videos", "projects", "bio"];
+      sections.forEach(sec => {
+        document.getElementById(sec).classList.add("hidden");
+      });
+
+      if (id !== "home") {
+        document.getElementById(id).classList.remove("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
