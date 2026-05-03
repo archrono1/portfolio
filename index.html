@@ -49,10 +49,24 @@
       margin-top: 20px;
       line-height: 1.6;
     }
+    .logo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      opacity: 0.85;
+      z-index: 1000;
+    }
+    .logo:hover {
+      opacity: 1;
+      transform: scale(1.05);
+      transition: 0.2s ease;
+    }
   </style>
 </head>
 
 <body>
+  <img src="assets/logo.png" class="logo">
   <div class="terminal">
     <p>> system initialized</p>
     <p>> tracking temporal existence...</p>
@@ -92,7 +106,7 @@
       </p>
     </div> 
   <!-- SOCIALS -->
-    <div id="socials" class="section hidden">>
+    <div id="socials" class="section hidden">
       <p>
        > <a href="https://github.com/archrono1" target="_blank">github</a><br>
        > <a href="https://youtube.com/@archrono" target="_blank">youtube</a><br>
