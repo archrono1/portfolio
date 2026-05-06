@@ -2,20 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>archrono</title>
 
-  <style>
+<style>
+    /* 1. Global Terminal Aesthetic */
     body {
       background: #000;
       color: #00ff00;
       font-family: "Courier New", monospace;
       margin: 0;
+      line-height: 1.5;
     }
 
     .terminal {
       padding: 40px;
       max-width: 900px;
       margin: auto;
+      box-sizing: border-box; /* Ensures padding doesn't break width */
     }
 
     a {
@@ -25,30 +29,49 @@
 
     a:hover {
       text-shadow: 0 0 6px #00ff64;
+      text-decoration: underline;
     }
 
+    /* 2. Navigation & Sections */
     .section {
        transition: opacity 0.2s ease;
+       margin-top: 20px;
     }
 
     .hidden {
       display: none;
     }
 
-    .cursor::after {
-      content: "_";
-      animation: blink 1s infinite;
+    /* 3. Detailed Project Layouts */
+    .project-entry {
+      border: 1px solid #00ff00;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: rgba(0, 255, 0, 0.05);
     }
 
-    @keyframes blink {
-      0%, 50%, 100% { opacity: 1; }
-      25%, 75% { opacity: 0; }
+    .project-entry img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+      border: 1px solid #00ff00;
     }
 
+    .project-title {
+      font-weight: bold;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* 4. Functional Elements */
     .clock-block {
       margin-top: 20px;
       line-height: 1.6;
+      border-bottom: 1px dashed #00ff00;
+      padding-bottom: 15px;
     }
+
     .logo {
       position: fixed;
       bottom: 20px;
@@ -56,13 +79,35 @@
       width: 120px;
       opacity: 0.85;
       z-index: 1000;
+      transition: 0.3s ease;
     }
+
     .logo:hover {
       opacity: 1;
-      transform: rotate(360deg) scale(1.05);
-      transition: 0.2s ease;
+      transform: rotate(10deg) scale(1.1);
     }
-  </style>
+
+    /* 5. mobile */
+    @media (max-width: 600px) {
+      .terminal {
+        padding: 20px; /* Less padding on small screens */
+      }
+      
+      .logo {
+        width: 60px; /* Smaller logo so it doesn't block text */
+        bottom: 10px;
+        right: 10px;
+      }
+
+      body {
+        font-size: 14px; /* Slightly smaller text for mobile */
+      }
+
+      iframe {
+        height: 250px; /* Resize YouTube embed for mobile */
+      }
+    }
+</style>
 </head>
   <link rel="icon" type="image/png" href="assets/logo.png">
 <body>
@@ -171,3 +216,4 @@ function showSection(id) {
   </script>
 </body>
 </html>
+  
