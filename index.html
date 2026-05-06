@@ -121,6 +121,7 @@
       <p>> navigation</p>
       <p>
         <a href="#" onclick="showSection('videos')">> videos</a><br>
+        <a href="#" onclick="showSection('graphics')">> graphics</a><br>
         <a href="#" onclick="showSection('past projects')">> past projects</a><br>
         <a href="#" onclick="showSection('current projects')">> current projects</a><br>
         <a href="#" onclick="showSection('bio')">> bio</a><br>
@@ -136,6 +137,15 @@
       </iframe>
     </div>
 
+    <!-- GRAPHICS -->
+    <div id="graphics" class="section hidden">
+      <p>
+        > graphics created for science visualization projects<br>
+        > designed to simplify and clarify complex scientific concepts<br>
+      
+      </p>
+    </div>
+
     <!-- PAST PROJECTS -->
     <div id="past projects" class="section hidden">
       <p>
@@ -144,10 +154,27 @@
     </div>
    <!-- CURRENT PROJECTS-->
    <div id="current projects" class="section hidden">
-     <p>
-      > quantum tunneling python simulation + video <br>
-      > "Collapse!" quantum card game for Harvard Quantum Initiative Shorts Contest 2026
+
+    <!-- Project 1-->
+   <div class="project-entry">
+    <span class="project-title">archrono: science visualization channel</span>
+    <p>
+      > youtube channel focused on visualizing complex scientific concepts<br>
+      > goal: make science more accessible and engaging through visuals<br>
+     <!-- <img src="assets/quantum_preview.png" alt="Simulation Preview"-->   
     </p>
+  </div>
+
+   <!-- Project 2-->
+   <div class="project-entry">
+    <span class="project-title">"Collapse!" Quantum Card Game</span>
+    <p>
+      > designed for the Harvard Quantum Initiative Shorts Contest 2026.<br>
+      > the game translates complex quantum mechanics into a tabletop strategy format.<br>
+     <!-- <img src="assets/quantum_preview.png" alt="Simulation Preview"-->   
+    </p>
+  </div>
+
   </div>
    <!-- BIO -->
     <div id="bio" class="section hidden">
@@ -197,7 +224,7 @@
     updateClocks();
 
 function showSection(id) {
-  const sections = ["videos", "past projects", "current projects", "bio", "socials"];
+  const sections = ["videos", "graphics", "past projects", "current projects", "bio", "socials"];
 
   const target = document.getElementById(id);
   const isHidden = target.classList.contains("hidden");
