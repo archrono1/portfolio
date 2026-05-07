@@ -6,7 +6,6 @@
   <title>archrono</title>
 
 <style>
-    /* 1. Global Terminal Aesthetic */
     body {
       background: #000;
       color: #00ff00;
@@ -19,7 +18,7 @@
       padding: 40px;
       max-width: 900px;
       margin: auto;
-      box-sizing: border-box; /* Ensures padding doesn't break width */
+      box-sizing: border-box; 
     }
 
     a {
@@ -32,7 +31,6 @@
       text-decoration: underline;
     }
 
-    /* 2. Navigation & Sections */
     .section {
        transition: opacity 0.2s ease;
        margin-top: 20px;
@@ -42,7 +40,6 @@
       display: none;
     }
 
-    /* 3. Detailed Project Layouts */
     .project-entry {
       border: 1px solid #00ff00;
       padding: 15px;
@@ -64,7 +61,6 @@
       margin-bottom: 5px;
     }
 
-    /* 4. Functional Elements */
     .clock-block {
       margin-top: 20px;
       line-height: 1.6;
@@ -129,39 +125,43 @@
       line-height: 1.4;
     }
 
-    /* 5. mobile */
     @media (max-width: 600px) {
       .terminal {
-        padding: 20px; /* Less padding on small screens */
+        padding: 20px; 
       }
       
       .logo {
-        width: 60px; /* Smaller logo so it doesn't block text */
+        width: 60px; 
         bottom: 10px;
         right: 10px;
       }
 
       body {
-        font-size: 14px; /* Slightly smaller text for mobile */
+        font-size: 14px; 
       }
 
       iframe {
-        height: 250px; /* Resize YouTube embed for mobile */
+        height: 250px;  
       }
       
     .graphics-grid {
-        grid-template-columns: 1fr; /* Stack everything vertically on phones */
+        grid-template-columns: 1fr; 
         gap: 20px;
   }
     }
 </style>
+
 </head>
   <link rel="icon" type="image/png" href="assets/logo.png">
 <body>
+
   <img src="assets/logo.png" class="logo">
+
   <div class="terminal">
-    <p>>(c) archrono corporation. all lefts reserved.</p>                                                 
-    <p>> the clock ticks by...</p>
+
+      <p>>(c) archrono corporation. all lefts reserved.</p>                                                 
+      <p>> the clock ticks by...</p>
+
     <div class="clock-block" id="clocks"></div>
 
     <div class="section">
@@ -203,41 +203,43 @@
             Created using adobe illustrator and a lot of ctrl+z.
           </p>
       </div>
-    </div> <!-- Closes graphics-item -- >
-  </div> <!-- Closes graphics graphics-grid -->
-</div> <!-- Closes graphics-->
+    </div> 
+  </div> 
+    </div> 
 
     <!-- PAST PROJECTS -->
     <div id="past projects" class="section hidden">
       <p>
-        > this portfolio website
+        > this portfolio website (continuous development)
       </p>
     </div>
-   <!-- CURRENT PROJECTS-->
-   <div id="current projects" class="section hidden">
 
-    <!-- Project 1-->
-   <div class="project-entry">
-    <span class="project-title">archrono: science visualization channel</span>
-    <p>
-      > youtube channel focused on visualizing complex scientific concepts<br>
-      > goal: make science more accessible and engaging through visuals<br>
-     <img src="assets/logo.png" style=max-width:25%; height; auto; alt="archrono channel logo">
-    </p>
-  </div>
+    <!-- CURRENT PROJECTS-->
+    <div id="current projects" class="section hidden">
 
-   <!-- Project 2-->
-   <div class="project-entry">
+      <!-- Project 1-->
+      <div class="project-entry">
+       <span class="project-title">archrono: science visualization channel</span>
+        <p>
+          > youtube channel focused on visualizing complex scientific concepts<br>
+          > goal: make science more accessible and engaging through visuals<br>
+          <img src="assets/logo.png" style=max-width:25%; height; auto; alt="archrono channel logo">
+        </p>
+      </div>
+
+      <!-- Project 2-->
+      <div class="project-entry">
     <span class="project-title">"Collapse!" Quantum Card Game</span>
     <p>
       > designed for the Harvard Quantum Initiative Shorts Contest 2026.<br>
       > the game translates complex quantum mechanics into a tabletop strategy format.<br>
      <!-- <img src="assets/quantum_preview.png" alt="Simulation Preview"-->   
     </p>
-  </div>
+      </div>
 
-  </div>
-   <!-- BIO -->
+    </div>
+
+    <!-- BIO -->
     <div id="bio" class="section hidden">
       <p>
         > high school student<br>
@@ -247,7 +249,8 @@
         > getting involved with science research<br>
       </p>
     </div> 
-  <!-- SOCIALS -->
+
+    <!-- SOCIALS -->
     <div id="socials" class="section hidden">
       <p>
        > <a href="https://github.com/archrono1" target="_blank">github</a><br>
